@@ -14,18 +14,17 @@ export default function Results () {
 			{range: '$180,000+', breakdown: 0},
 		]
 		taxBreakdown[0].breakdown = income
-		const brackets = [18200, 45000, 120000, 180000]
+		const brackets = [0, 18200, 45000, 120000, 180000]
 		const len = brackets.length
-		for (let i=0; i < len - 1; i++) {
+		for (let i=1; i < len - 1; i++) {
 			if (income > brackets[i]) {
-				taxBreakdown[i].breakdown = brackets[i]
-				taxBreakdown[i+1].breakdown = income - brackets[i]
+				taxBreakdown[i-1].breakdown = brackets[i] - brackets[i-1]
+				taxBreakdown[i].breakdown = income - brackets[i-1]
 			}
 		}
 		if (income > brackets[len - 1]) {
-			taxBreakdown[len - 1].breakdown = brackets[len-1]
-			taxBreakdown[len].breakdown = 
-				income - brackets[len - 1]
+			taxBreakdown[len - 2].breakdown = brackets[len - 1] - brackets[len - 2]
+			taxBreakdown[len - 1].breakdown = income - brackets[len - 2]
 		}
 		return taxBreakdown
 	}
