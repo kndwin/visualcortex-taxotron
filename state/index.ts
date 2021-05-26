@@ -10,5 +10,5 @@ export const useStore = create<state>(set => ({
 	isCalculated: false,
 	toggleCalculated: () => set(state => ({ isCalculated: !state.isCalculated})),
 	income: 0, 
-	setIncome: (income) => set(state => ({ income: income}))
+	setIncome: (income) => set(() => ({ income: income}))
 }))
