@@ -1,0 +1,82 @@
+.background {
+	h1 {
+		width: 100%; 
+		color: white;
+		font-weight: bold;
+		font-size: 3rem; 
+		margin-bottom: 0; 
+	}
+	p {
+		color: white;
+		font-size: 16px;
+		line-height: 19px;
+	}
+	display: flex; 
+	flex-direction: column; 	
+	align-items: center;
+	text-align: left; 
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+	height: 100%; 
+	width: 24em; 
+	background: #8477C9;
+	border-radius: 5px;
+	overflow: hidden; 
+	padding: 1rem; 
+	position: relative;
+
+	.circle {
+		position: absolute;
+		bottom: 0%; 
+		left: 0%; 
+		transform: translate(9.5rem, -6rem);
+		height: 36px;
+		width: 36px;
+		border-radius: 50%;
+		display: inline-block;
+		background: rgba(255, 255, 255, 0.8);
+		box-shadow: -10px 13px 3px rgba(0, 0, 0, 0.15);
+	}
+
+	.bigCircle {
+		background: linear-gradient(117.38deg, #E7E6FF 10.73%, rgba(231, 230, 255, 0) 84.05%);
+		bottom: 0%; 
+		left: 0%; 
+		position: absolute;
+		transform: translate(-2rem, 2rem);
+		height: 200px;
+		width: 220px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	@media (max-width: 25em) {
+		min-height: 20em; 
+		height: 100%; 
+	}
+}
+
+.landing { 
+	padding: 5em 4em; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@media (max-width: 50em) {
+		padding: 2em 4em; 
+	}
+}
+.moveCard {
+	animation: slide-in-left 0.5s cubic-bezier(0.5, 0.460, 0.450, 0.940) both;
+
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-24em);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+

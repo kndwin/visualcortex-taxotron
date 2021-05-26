@@ -2,21 +2,24 @@ import Head from 'next/head';
 import utils from 'styles/utils.module.scss';
 
 import { Landing, Results} from 'components'
-import {useState} from 'react';
+import {useStore} from 'state';
 
 export default function Home() {
-	const [isResults, setResults] = useState(false)
+	const isCalculated = useStore(state => state.isCalculated)
   return (
     <div className={utils.container}>
       <Head>
         <title>Tax-o-tron</title>
       </Head>
 
-			{ !isResults ? (
-				<Landing  />
-			) : (
-				<Results />
-			)}
+			<div className={utils.card}>
+				{isCalculated}
+				{ !isCalculated ? (
+					<Landing  />
+				) : (
+					<Results />
+				)}
+			</div>
 			
     </div>
   );
