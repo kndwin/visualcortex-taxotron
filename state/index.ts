@@ -1,8 +1,14 @@
 import create from 'zustand'
 
-export const useStore = create(set => ({
+interface state {
+	isCalculated: boolean
+	toggleCalculated: () => void
+	income: number
+	setIncome: (income: number) => void
+}
+export const useStore = create<state>(set => ({
 	isCalculated: false,
 	toggleCalculated: () => set(state => ({ isCalculated: !state.isCalculated})),
 	income: 0, 
-	setIncome: (income: number) => set(state => state.income = income)
+	setIncome: (income) => set(state => ({ income: income}))
 }))

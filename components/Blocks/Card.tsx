@@ -4,7 +4,7 @@ import styles from './Card.module.scss'
 export default function Card ({
 	children,
 } : {
-	children: React.ReactChildren
+	children: React.ReactNode
 }) {
 	const isCalculated = useStore(state => state.isCalculated)
 

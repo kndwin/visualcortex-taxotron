@@ -11,7 +11,7 @@ export default function Form () {
 	const [formIsValid, setFormIsValid] = useState(false)
 	const [error, setError] = useState('Field marked with * are mandatory')
 
-	function onSubmit (e) {
+	function onSubmit (e: any) {
 		if (formIsValid) {
 			toggleCalculated()
 			updateIncome(income)
@@ -20,7 +20,7 @@ export default function Form () {
 		}	
 	}
 
-	function validateInput (e) {
+	function validateInput (e: any) {
 		e.preventDefault
 		const input = e.target.value
 		if (input > 0) {

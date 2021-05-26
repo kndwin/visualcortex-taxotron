@@ -4,7 +4,7 @@ import Card from '../Blocks/Card'
 import { useStore } from 'state'
 
 export default function Results () {
-	const income = parseInt(useStore(state => state.income))
+	const income = useStore(state => state.income)
 	function getTaxBreakdown (income: number) {
 		let taxBreakdown = [
 			{range: '$0 - $18,200', breakdown: 0},
